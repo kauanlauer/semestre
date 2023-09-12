@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FATURAMENTO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de Dados</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(0, 113, 143);
-            /* Cor de fundo azul */
             margin: 0;
-            /* Remover margens padrão */
             padding: 0;
-            /* Remover preenchimento padrão */
         }
 
         header {
             background-color: rgb(200, 210, 5);
-            /* Cor de fundo verde */
             padding: 10px;
             display: flex;
             justify-content: center;
@@ -26,23 +22,21 @@
 
         header img {
             height: 100px;
-            /* Altura do logotipo */
             margin-right: 20px;
-            /* Espaçamento entre o logotipo e o título */
         }
 
         h1 {
             text-align: center;
             color: #fff;
-            /* Cor do texto branca */
-        }
-
-        .button-container {
-            text-align: center;
+            font-size: 24px;
             margin-top: 20px;
         }
 
-        .button-container button {
+        .menu-container {
+            text-align: center;
+        }
+
+        .menu-container button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: rgb(0, 113, 143);
@@ -54,18 +48,41 @@
             transition: background-color 0.3s ease;
         }
 
-        .button-container button:hover {
+        .menu-container button:hover {
             background-color: rgb(200, 210, 5);
         }
 
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 120px); /* Altura ajustada para dar espaço ao cabeçalho */
+            color: white;
+            text-align: center;
+        }
+
+        .slide {
+    display: none;
+    animation: fadeInOut 5s ease infinite;
+    font-size: 50px; /* Tamanho da fonte para os elementos de texto dentro das divs .slide */
+}
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
-
 <body>
     <header>
         <img src="logobr.png" alt="Logo da Empresa">
         <h1>RELATÓRIOS DE FATURAMENTO</h1>
-        <div class="button-container">
+        <div class="menu-container">
             <button onclick="window.location.href='index.html'">Início</button>
             <button onclick="window.location.href='total.html'">Top 20 Clientes</button>
             <button onclick="window.location.href='industria.html'">Top 20 Indústria</button>
@@ -73,6 +90,59 @@
             <button onclick="window.location.href='revendas.html'">Top 20 Revendas</button>
         </div>
     </header>
-</body>
+    <div class="slide-container">
+        <div class="slide">
+            <h1>Curitiba</h1>
+            <p>R$ 27.586.701</p>
+        </div>
+        <div class="slide">
+            <h1>Manaus</h1>
+            <p>R$ 26.127.643</p>
+        </div>
+        <div class="slide">
+            <h1>Total Geral</h1>
+            <p>R$ 53.714.344</p>
+        </div>
+        <div class="slide">
+            <h1>DISTRIBUIDOR</h1>
+            <p>R$ 6.949.287</p>
+        </div>
+        <div class="slide">
+            <h1>INDUSTRIA</h1>
+            <p>R$ 20.205.447</p>
+        </div>
+        <div class="slide">
+            <h1>REVENDA</h1>
+            <p>R$ 26.559.610</p>
+        </div>
+        <div class="slide">
+            <h1>Total Geral</h1>
+            <p>R$ 53.714.344</p>
+        </div>
+    </div>
 
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000); // Troca de slide a cada 5 segundos
+
+        showSlide(currentIndex); // Mostra o primeiro slide
+    </script>
+</body>
 </html>
