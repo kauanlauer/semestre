@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>QUANTIDADE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 113, 143);
+            /* Cor de fundo azul */
+            margin: 0;
+            /* Remover margens padrão */
+            padding: 0;
+            /* Remover preenchimento padrão */
+        }
+
+        header {
+            background-color: rgb(200, 210, 5);
+            /* Cor de fundo verde */
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header img {
+            height: 100px;
+            /* Altura do logotipo */
+            margin-right: 20px;
+            /* Espaçamento entre o logotipo e o título */
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            /* Cor do texto branca */
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(0, 113, 143);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: rgb(200, 210, 5);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="logobr.png" alt="Logo da Empresa">
+        <h1>RELATÓRIOS DE QUANTIDADE KG/M²</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='index.html'">Início</button>
+            <button onclick="window.location.href='total.html'">Top 20 Clientes</button>
+            <button onclick="window.location.href='industria.html'">Top 20 Indústria</button>
+            <button onclick="window.location.href='distribuicao.html'">Top 20 Distribuição</button>
+            <button onclick="window.location.href='revendas.html'">Top 20 Revendas</button>
+        </div>
+    </header>
+</body>
+
+</html>
