@@ -62,9 +62,10 @@
 
         #mapa-brasil {
             display: block;
-            margin: 0 auto;
+            margin: 30px auto 0; /* Adicionado 30px de margem superior */
             max-width: 80%; /* Ajuste a largura máxima conforme necessário */
             height: auto;
+            animation: bounce 2s ease infinite;
         }
 
         .button-container {
@@ -88,6 +89,14 @@
             background-color: rgb(200, 210, 5); /* Mudança de cor ao passar o mouse */
         }
 
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
     </style>
 </head>
 
